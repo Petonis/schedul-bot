@@ -10,9 +10,9 @@ def get_schedule_text() -> str:
 def send_message():
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
     payload = {"chat_id": CHAT_ID, "text": get_schedule_text()}
-response = requests.post(url, data=payload)
-response.raise_for_status()
-print("Отправлено:", response.json())
+    response = requests.post(url, data=payload)
+    response.raise_for_status()
+    print("Отправлено:", response.json())
 
 if __name__ == "__main__":
-send_message()
+    send_message()
